@@ -35,4 +35,9 @@ contract Lottery {
     function getPlayers() public view returns (address[] memory) {
         return players;
     }
+
+    function contractName() public pure returns(string memory ) {
+        return "The Lottery Contract is OnLine";
+    }
+
 }
