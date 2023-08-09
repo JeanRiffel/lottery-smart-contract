@@ -2,7 +2,7 @@ import Web3 from 'web3';
 
 class LotterySmartContract {
   private web3: Web3;
-  private contractAddress = '0xFBD2Ff43bbA56af80977453Cbd2187d8C2557bd1';
+  private contractAddress = '0x26Af1569a671Afd120ac60FC73CF3A8A4065CFD9';
   private provider: string = 'HTTP://127.0.0.1:7545'
   private abi: any[] = [
   {
@@ -99,6 +99,14 @@ class LotterySmartContract {
     const contractABI: any[] = this.abi;
     const contractAddress = this.contractAddress;
     return new this.web3.eth.Contract(contractABI, contractAddress);
+  }
+
+  public getToWei(value: any): any {
+    return this.web3.utils.toWei(value, "ether")
+  }
+
+  public getContractAddress(): any {
+    return this.contractAddress;
   }
 }
 
