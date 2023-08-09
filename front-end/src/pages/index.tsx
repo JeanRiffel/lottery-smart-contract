@@ -6,6 +6,7 @@ export default function Home() {
   const [betValue, setBetValue] = useState('');
   const [betAmount, setBetAmount] = useState('');
   const [gambler, setGambler] = useState('');
+  const [address, setAddress] = useState('')
   const [contractName, setContractName] = useState('');
   const [randomNumber, setRandomNumber] = useState('');
   const [winner, setWinner] = useState('');
@@ -14,8 +15,40 @@ export default function Home() {
     handleContractName();
   }, [])
 
+  const handleWinner = async () => {
+    const instance = axios.create({ 
+      baseURL: 'http://localhost:3001'
+    })
+
+    await instance.get('/winner')
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      });    
+
+  }
+
   const handleBet = async () => {
-    //
+
+    const payload = {
+      betValue,
+      betAmount,
+      address
+    }
+
+    const instance = axios.create({ 
+      baseURL: 'http://localhost:3001'
+    })
+
+    await instance.post('/place-bet', payload )
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      });
   };
 
   const handleContractName = async () =>{
@@ -57,11 +90,23 @@ export default function Home() {
           label="Bet Amount"          
           onChange={(e) => setBetAmount(e.target.value)}
         />
+        <TextField
+          variant="outlined" 
+          label="Address"          
+          onChange={(e) => setAddress(e.target.value)}
+        />        
         <Button 
           variant="contained"
           onClick={handleBet}
         >
           Place Bet
+        </Button>
+
+        <Button 
+          variant="contained"
+          onClick={handleWinner}
+        >
+          Get Winner
         </Button>
       </div>
       {randomNumber && <p>Random Number: {randomNumber}</p>}
