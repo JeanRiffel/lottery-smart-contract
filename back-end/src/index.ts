@@ -13,13 +13,31 @@ app.use(bodyParser.json());
 interface Bet {
   betValue: string;
   betAmount: number;
+  address: string
 }
 
 const bets: Bet[] = [];
 
-app.post('/place-bet', (req: Request, res: Response) => {
-  const { betValue, betAmount } = req.body as Bet;
-  bets.push({ betValue, betAmount });
+app.post('/place-bet', async(req: Request, res: Response) => {
+  const { betValue, betAmount, address } = req.body as Bet;
+  
+  const wei = lotterySmartContract.getToWei(betAmount);
+  const result = await contract.methods.enter().send({
+    from: address,
+    value: wei
+  });
+
+  //res.status(200).json({result})
+  console.log(result)
+});
+
+
+app.get('/winner', async(req: Request, res: Response) => {
+  
+  const result = await contract.methods.pickWinner().call()
+
+  //res.status(200).json({result})
+  console.log('pickWinner', result)
 });
 
 app.get('/contract-name', async(req: Request, res: Response) => {
