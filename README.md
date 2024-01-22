@@ -2,11 +2,13 @@
 
 # The project
 
-This project is for studying purpose.
+This project is intended for educational purposes. 
 
-Using a web app the user can bet some random number offering some amount of Ether, the a smar contract will receive the bet and the amount of Ether. 
+Through a web application, users can place bets on randomly generated numbers by offering a certain amount of Ether. 
 
-The number will generate randomly and the winner will gain the sum of the amount of Ether.
+A smart contract will receive both the bet and the corresponding Ether amount. 
+
+The winning number will be determined randomly, and the successful participant will receive the accumulated Ether sum.
 
 ## Tecnologies applied
 
