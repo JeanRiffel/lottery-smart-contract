@@ -1,76 +1,81 @@
 # Lottery Smart Contract
 
-# The project
+## Project Overview
 
-This project is intended for educational purposes. 
+This project serves educational purposes, offering a web application that allows users to place bets on randomly generated numbers using Ether. A smart contract manages the bets, receives Ether, and determines the winning number randomly. The participant with the correct number receives the accumulated Ether sum.
 
-Through a web application, users can place bets on randomly generated numbers by offering a certain amount of Ether. 
+## Technologies Used
 
-A smart contract will receive both the bet and the corresponding Ether amount. 
+### Front-End: Next.js
 
-The winning number will be determined randomly, and the successful participant will receive the accumulated Ether sum.
+Next.js is employed for building the front-end of the application. For more information, visit [Next.js](https://nextjs.org/).
 
-## Tecnologies applied
+#### Installation Instructions
 
-### NextJS 
-
-Used to build the front-end
-
-To know more about NextJS click [here](https://nextjs.org/)
-
-#### Instruction to install
-
+```bash
 npx create-next-app .
+```
 
-### ExpressJS 
+### Back-End: Express.js
 
-Used to build the back-end
+Express.js is utilized for building the back-end of the application. Learn more about Express.js [here](https://expressjs.com/).
 
-To know more about ExpressJS click [here](https://expressjs.com/)
+#### Installation Instructions
 
-#### Instruction to install
-
+```bash
 npm init -y
 npm install express body-parser
 npm install --save-dev typescript @types/express @types/node
+```
 
-
-### Enviroment to Smart Contract
+### Smart Contract Environment
 
 #### Truffle
 
-Install Truffle
+Truffle is the chosen framework for smart contract development. Learn more about Truffle [here](https://trufflesuite.com/).
 
-To know more about Truffle click [here](https://trufflesuite.com/)
+#### Installation Instructions
+
+```bash
+npm install -g truffle
+```
 
 ### TypeScript
 
-To know more about TypeScript click [here](https://www.typescriptlang.org/)
+TypeScript is used to enhance the development experience. Learn more about TypeScript [here](https://www.typescriptlang.org/).
 
-#### Instruction to install and execute
+#### Installation and Execution Instructions
 
-* truffle init
+1. Initialize Truffle project:
 
-Move into the contracts folder and create a new file.
+```bash
+truffle init
+```
 
-After create a Solidity program type the command below
+2. Create a new Solidity file in the contracts folder.
 
+3. Compile the Solidity program:
+
+```bash
 truffle compile
+```
 
-After that, the new folder build will be created, so type the command below:
+4. Migrate the smart contract:
 
-* truffle migrate
+```bash
+truffle migrate
+```
 
-After that, you smart contract will be running on Ganache blockchain on your local machine, which is a copy from a Ethereum blockchain.
+5. Access the Truffle console:
 
-So you can access the console of truffle in order to get access to your Smart Contract.
-
-* truffle console
+```bash
+truffle console
+```
 
 #### Ganache
 
-To know more about Ganache click [here](https://trufflesuite.com/ganache/)
+Ganache is employed to run the Ethereum blockchain locally. More details about Ganache can be found [here](https://trufflesuite.com/ganache/).
 
 ### Solidity
 
-To know more about Solidity click [here](https://soliditylang.org/)
+Solidity is the programming language for writing smart contracts on the Ethereum blockchain. Learn more about Solidity [here](https://soliditylang.org/).
