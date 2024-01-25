@@ -59,3 +59,4 @@ You are now at truffle console right, so type these commands:
 - lottery.contractName() 
 
 As output you should see the message: The Lottery Contract is OnLine
+
