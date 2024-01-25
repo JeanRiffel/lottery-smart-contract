@@ -49,3 +49,13 @@ truffle migrate
 ```bash
 truffle console
 ```
+
+### Running the contract 
+
+Whether you followed the previous steps: 3, 4 and 5.
+
+You are now at truffle console right, so type these commands:
+- let lottery = await Lottery.deployed()
+- lottery.contractName() 
+
+As output you should see the message: The Lottery Contract is OnLine
