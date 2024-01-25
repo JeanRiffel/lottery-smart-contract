@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "check": "node -e \"console.log('Hello from my script!')\"",
     "build": "truffle compile",
     "migrate": "truffle migrate"
   },
