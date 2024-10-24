@@ -18,11 +18,15 @@ contract Lottery {
       return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
     }
 
+    event WinnerPicked(address winner);
+    
     function pickWinner() public restricted {
       uint index = random() % players.length;
       address winner = players[index];
       address payable winnerPayable = payable(winner);
       winnerPayable.transfer(address(this).balance);
+      
+      emit WinnerPicked(winner);
 
       players = new address[](0);
     }
