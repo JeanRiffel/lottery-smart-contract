@@ -50,6 +50,11 @@ truffle migrate
 truffle console
 ```
 
+6. Unit testing of the contract
+```bash
+truffle test
+```
+
 ### Running the contract 
 
 Whether you followed the previous steps: 3, 4 and 5.
